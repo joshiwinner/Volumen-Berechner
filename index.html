@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+
+  html,body {
+    height: 100vh;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+
+</style>
+<body>
+
+  <div class="main">
+
+    <div class="Mathe">
+      <p id="VolumenWürfel"></p>
+      <input type="number" placeholder="Würfel Seitenlänge" id="Würfelinput">
+      <button onclick="Würfelvolumen()">berechnen</button>
+    </div>
+
+    
+    <div class="Mathe">
+      <p id="VolumenZylinder"></p>
+      <input type="number" placeholder="Zylinder Höhe" id="Zylinderhöhe">
+      <input type="number" placeholder="radius" id="radius">
+      <button onclick="Zylindervolumen()">berechnen</button>
+    </div>
+
+
+    <div class="Mathe">
+      <p id="VolumenPyramiede"></p>
+      <input type="number" placeholder="Pyramiede Höhe" id="Pyramiedehöhe">
+      <input type="number" placeholder="Seite a" id="Seitepyramiede">
+      <button onclick="Pyramiedenvolumen()">berechnen</button>
+    </div>
+  </div>
+
+  <script>
+
+    function Würfelvolumen(params) {
+      document.getElementById("VolumenWürfel").innerText = document.getElementById("Würfelinput").value * document.getElementById("Würfelinput").value * document.getElementById("Würfelinput").value
+    }
+
+    function Zylindervolumen(params) {
+      document.getElementById("VolumenZylinder").innerText = Math.PI * document.getElementById("Zylinderhöhe").value * document.getElementById("radius").value
+    }
+
+    function Pyramiedenvolumen(params) {
+      document.getElementById("VolumenPyramiede").innerText = 0.333333 * document.getElementById("Seitepyramiede").value * 2 * document.getElementById("Pyramiedehöhe").value
+    }
+    
+  </script>
+  
+</body>
+</html>
