@@ -6,24 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
+<style>
+
+  html,body {
+    height: 100vh;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+
+</style>
 <body>
 
-  <button onclick="gen()"> gen pas</button>
-  <input type="text" placeholder="länge pas" id="länge">
+  <div class="main">
+
+    <div class="Mathe">
+      <p id="VolumenWürfel"></p>
+      <input type="number" placeholder="Würfel Seitenlänge" id="Würfelinput">
+      <button onclick="Würfelvolumen()">berechnen</button>
+    </div>
+
+    
+    <div class="Mathe">
+      <p id="VolumenZylinder"></p>
+      <input type="number" placeholder="Zylinder Höhe" id="Zylinderhöhe">
+      <input type="number" placeholder="radius" id="radius">
+      <button onclick="Zylindervolumen()">berechnen</button>
+    </div>
+
+
+    <div class="Mathe">
+      <p id="VolumenPyramiede"></p>
+      <input type="number" placeholder="Pyramiede Höhe" id="Pyramiedehöhe">
+      <input type="number" placeholder="Seite a" id="Seitepyramiede">
+      <button onclick="Pyramiedenvolumen()">berechnen</button>
+    </div>
+  </div>
 
   <script>
-    let pass = ""
-    let alp =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",0,1,2,3,4,5,6,7,8,9]
-    function gen(params) {
-      pass = ""
-      for (let index = 0; index < document.getElementById("länge").value; index++) {
-        let random = Math.floor(Math.random() * alp.length)
-        pass += alp[random]
-      }
-      console.log(pass);
-    }
-  </script>
 
+    function Würfelvolumen(params) {
+      document.getElementById("VolumenWürfel").innerText = document.getElementById("Würfelinput").value * document.getElementById("Würfelinput").value * document.getElementById("Würfelinput").value
+    }
+
+    function Zylindervolumen(params) {
+      document.getElementById("VolumenZylinder").innerText = Math.PI * document.getElementById("Zylinderhöhe").value * document.getElementById("radius").value
+    }
+
+    function Pyramiedenvolumen(params) {
+      document.getElementById("VolumenPyramiede").innerText = 0.333333 * document.getElementById("Seitepyramiede").value * document.getElementById("Seitepyramiede").value * document.getElementById("Pyramiedehöhe").value
+    }
+    
+  </script>
   
 </body>
 </html>
